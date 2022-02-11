@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { FaTimes } from "react-icons/fa";
 import Card from "./shared/Card";
 import PropTypes from "prop-types";
 
-function FeedbackItem({ item }) {
+function FeedbackItem({ item, handleDelete }) {
   // const [rating, setRating] = useState(0);
   // const [text, setText] = useState("This is an example of feedback item");
   // const handleClick = function () {
@@ -14,6 +14,7 @@ function FeedbackItem({ item }) {
   return (
     <Card>
       <div className="num-display">{item.rating}</div>
+      <FaTimes onClick={() => handleDelete(item.id)} className="close" />
       <div className="text-display">{item.text}</div>
       {/* <button onClick={handleClick}>Click</button> */}
     </Card>
